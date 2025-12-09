@@ -87,5 +87,3 @@ No todos yet! Add one above.
 - Array iteration ({#each})
 
 Work in: `/src/svelte-scripts/Opdracht8/Opdracht8.svelte`
-
-This one brings together buttons, events, and arrays, honey. Take your time!
