@@ -39,5 +39,3 @@ You have 3 todos
 - Input binding: `<input bind:value={variable}>`
 
 Work in: `/src/svelte-scripts/Opdracht4/Opdracht4.svelte`
-
-Take your time and read everything, honey!
