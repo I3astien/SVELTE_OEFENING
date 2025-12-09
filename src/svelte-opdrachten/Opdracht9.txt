@@ -101,5 +101,3 @@ After saving:
 - State coordination between different variables
 
 Work in: `/src/svelte-scripts/Opdracht9/Opdracht9.svelte`
-
-This one's a step up, sweetie - you're managing different states for each todo item!
