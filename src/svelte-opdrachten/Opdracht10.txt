@@ -109,5 +109,3 @@ User Directory
 ```
 
 Work in: `/src/svelte-scripts/Opdracht10/`
-
-This is your first multi-file assignment, honey - you're building something reusable!
