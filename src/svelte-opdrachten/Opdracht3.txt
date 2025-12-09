@@ -1,0 +1,42 @@
+# Opdracht 3: Show/Hide Message with Conditional Rendering
+
+## Goal
+Learn Svelte's `{#if}` conditional rendering by creating a toggle button that shows/hides a message.
+
+## Requirements
+
+1. Create a reactive boolean variable `isVisible` that starts as `false`
+2. Create a button that toggles `isVisible` between `true` and `false`
+3. Use `{#if}` block to conditionally show a message when `isVisible` is `true`
+4. The button text should change based on state:
+   - Show "Hide Message" when message is visible
+   - Show "Show Message" when message is hidden
+5. **Challenge**: Use a ternary operator for the button text (not an if/else statement)
+
+## Example Output
+
+When hidden:
+```
+[Show Message]
+```
+
+When visible:
+```
+[Hide Message]
+
+Hello! This is a secret message.
+```
+
+## Tips
+- Svelte's conditional rendering syntax:
+  ```svelte
+  {#if condition}
+    <p>This shows when condition is true</p>
+  {/if}
+  ```
+- To toggle a boolean: `isVisible = !isVisible`
+- Button text can use a ternary in curly braces: `{condition ? 'Text A' : 'Text B'}`
+
+Work in: `/src/svelte-scripts/Opdracht3/Opdracht3.svelte`
+
+Good luck, darling!

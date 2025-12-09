@@ -1,0 +1,33 @@
+# Opdracht 2: Counter with Reset
+
+## Goal
+Build a simple counter component that can increment, decrement, and reset.
+
+## Requirements
+
+1. Create a reactive variable `count` that starts at 0
+2. Create three buttons:
+   - "+" button that increases count by 1
+   - "-" button that decreases count by 1
+   - "Reset" button that sets count back to 0
+3. Display the current count value on the screen
+4. **Challenge**: Use a ternary operator to change the text color:
+   - Green when count is positive
+   - Red when count is negative
+   - White when count is 0
+
+## Example Output
+```
+Count: 5
+
+[+]  [-]  [Reset]
+```
+
+## Tips
+- Remember: in Svelte, just reassigning a variable makes it reactive
+- For the color challenge, you can use inline styles: `style="color: {condition ? 'green' : 'red'}"`
+- Think about how to handle three conditions (positive, negative, zero) with ternary operators
+
+Work in: `/src/svelte-scripts/Opdracht2/Opdracht2.svelte`
+
+Good luck, sweetie!

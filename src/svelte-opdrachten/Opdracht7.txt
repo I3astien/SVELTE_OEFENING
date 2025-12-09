@@ -1,0 +1,67 @@
+# Opdracht 7: Shopping Cart with Reactive Statements
+
+## Goal
+Practice reactive statements (`$:`) by building a simple shopping cart that calculates totals automatically.
+
+## Requirements
+
+1. Create variables for:
+   - `price` (product price, default: 10)
+   - `quantity` (number of items, default: 1)
+2. Use a **reactive statement** to calculate `total` (price × quantity)
+3. Display the price, quantity, and total
+4. Add buttons to increase/decrease quantity
+5. Show a discount message using a **reactive statement**:
+   - If total > 50: show "10% discount applied!"
+   - Calculate `finalPrice` with the discount (total × 0.9)
+6. **Challenge**: Use a ternary operator with a reactive statement to show:
+   - "Free shipping!" if total >= 30
+   - "Add €X more for free shipping" if total < 30 (calculate the difference)
+
+## Example Output
+```
+Shopping Cart
+
+Price per item: €10
+Quantity: [−] 3 [+]
+
+Subtotal: €30.00
+Free shipping! ✓
+
+Total: €30.00
+```
+
+With discount:
+```
+Price per item: €10
+Quantity: [−] 6 [+]
+
+Subtotal: €60.00
+10% discount applied!
+Free shipping! ✓
+
+Total: €54.00
+```
+
+## Tips
+- Reactive statements with `$:`:
+  ```svelte
+  <script>
+    let price = 10
+    let quantity = 1
+
+    // This automatically updates when price or quantity changes!
+    $: total = price * quantity
+
+    // You can use reactive statements for any computed value
+    $: hasDiscount = total > 50
+    $: finalPrice = hasDiscount ? total * 0.9 : total
+  </script>
+  ```
+- Format currency: `€${number.toFixed(2)}`
+- Prevent quantity going below 1
+- Use ternary operators in reactive statements!
+
+Work in: `/src/svelte-scripts/Opdracht7/Opdracht7.svelte`
+
+This one focuses on `$:` again, sweetie. Read carefully!

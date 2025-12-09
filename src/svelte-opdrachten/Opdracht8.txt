@@ -1,0 +1,91 @@
+# Opdracht 8: Todo List with Array Methods
+
+## Goal
+Learn to work with arrays in Svelte and practice event handling with form inputs.
+
+## Requirements
+
+1. Create a todo list app with:
+   - An input field for new todos
+   - A button to add todos
+   - A list displaying all todos
+   - Each todo has a "Remove" button
+
+2. Use an array to store todos (start with an empty array)
+
+3. When the user clicks "Add":
+   - Add the input value to the todos array
+   - Clear the input field
+   - **Important**: Update the array immutably (use spread operator or array methods)
+
+4. Each todo should show:
+   - The todo text
+   - A "Remove" button that deletes that specific todo
+
+5. **Challenge**: Add these features:
+   - Prevent adding empty todos (show a message or disable button)
+   - Show "No todos yet!" when the list is empty
+   - Add a counter showing how many todos there are
+   - (Optional) Add "Enter" key support - pressing Enter adds the todo
+
+## Example Output
+
+```
+My Todo List (3 items)
+
+[________________] [Add]
+
+• Buy milk          [Remove]
+• Study Svelte      [Remove]
+• Walk the dog      [Remove]
+```
+
+Empty state:
+```
+My Todo List (0 items)
+
+[________________] [Add]
+
+No todos yet! Add one above.
+```
+
+## Tips
+
+- Array immutability in Svelte:
+  ```svelte
+  <script>
+    let todos = []
+    let newTodo = ''
+
+    function addTodo() {
+      // ✅ Creates a new array (Svelte detects the change)
+      todos = [...todos, newTodo]
+
+      // ❌ This won't trigger reactivity!
+      // todos.push(newTodo)
+    }
+
+    function removeTodo(index) {
+      // ✅ Creates a new array without that index
+      todos = todos.filter((_, i) => i !== index)
+    }
+  </script>
+  ```
+
+- Bind input value: `<input bind:value={newTodo}>`
+- Looping with index: `{#each todos as todo, index}`
+- Prevent empty: Check `if (newTodo.trim() !== '')`
+- Enter key: `<input on:keydown={(e) => e.key === 'Enter' && addTodo()}>`
+
+## What You're Learning
+
+- Working with arrays in Svelte
+- Immutable updates (spread operator, filter)
+- Event handlers with parameters (passing index to remove)
+- Form handling
+- Conditional rendering ({#if})
+- Array iteration ({#each})
+
+Work in: `/src/svelte-scripts/Opdracht8/Opdracht8.svelte`
+
+This one brings together buttons, events, and arrays, honey. Take your time!

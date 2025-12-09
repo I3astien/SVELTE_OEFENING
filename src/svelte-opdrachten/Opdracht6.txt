@@ -1,0 +1,54 @@
+# Opdracht 6: Reactive Statements - Temperature Converter
+
+## Goal
+Learn Svelte's reactive statements (`$:`) by creating a temperature converter that automatically updates.
+
+## Requirements
+
+1. Create two input fields:
+   - One for Celsius
+   - One for Fahrenheit
+2. When the user types in Celsius, Fahrenheit automatically updates
+3. When the user types in Fahrenheit, Celsius automatically updates
+4. Use Svelte's reactive statements (`$:`) to calculate the conversions
+5. Display both temperatures with 1 decimal place
+6. **Challenge**: Use a ternary operator to change the background color:
+   - Blue when temperature is below 15°C (cold)
+   - Orange when temperature is above 25°C (hot)
+   - White when between 15-25°C (comfortable)
+
+## Conversion Formulas
+- Celsius to Fahrenheit: `(celsius * 9/5) + 32`
+- Fahrenheit to Celsius: `(fahrenheit - 32) * 5/9`
+
+## Example Output
+```
+Temperature Converter
+
+Celsius:    [20]
+Fahrenheit: [68.0]
+
+Current temp: Comfortable
+```
+
+## Tips
+- Reactive statements run whenever their dependencies change:
+  ```svelte
+  <script>
+    let celsius = 0
+
+    // This automatically updates when celsius changes!
+    $: fahrenheit = (celsius * 9/5) + 32
+  </script>
+  ```
+- Use `bind:value` on both inputs
+- To format to 1 decimal: `number.toFixed(1)`
+- You'll need TWO reactive statements (one for each conversion)
+- For inline styles with multiple properties:
+  ```svelte
+  <div style="background-color: {color}; padding: 1rem;">
+  ```
+
+Work in: `/src/svelte-scripts/Opdracht6/Opdracht6.svelte`
+
+This is a new concept but really powerful, sweetie! Take your time.

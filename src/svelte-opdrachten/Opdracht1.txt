@@ -1,0 +1,22 @@
+OPDRACHT 1: Hello Svelte
+
+DOEL:
+Learn the basics of Svelte components and reactive variables.
+
+INSTRUCTIES:
+1. Create a simple Svelte component that displays a greeting message
+2. Add a reactive variable called 'name' with your name as the initial value
+3. Display "Hello, [name]!" on the page
+4. Add a button that, when clicked, changes the name to "World"
+
+TIPS:
+- Reactive variables in Svelte are just regular JavaScript variables declared with let
+- Use curly braces {} to display variables in your HTML
+- Use on:click to handle button clicks
+- You don't need any special syntax to update variables - just assign them a new value!
+
+WAAR TE WERKEN:
+Work in: /src/svelte-scripts/Opdracht1/Opdracht1.svelte
+
+VERGEET NIET:
+After you're done, make sure to import your component in App.svelte so you can see it in the browser!

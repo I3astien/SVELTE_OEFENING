@@ -1,0 +1,105 @@
+# Opdracht 9: Todo List with Edit Feature
+
+## Goal
+Extend your todo list by adding the ability to edit existing todos. Practice managing more complex state and conditional rendering.
+
+## Requirements
+
+1. Start with your Opdracht 8 todo list (or build a basic one):
+   - Input field to add todos
+   - List of todos with Remove buttons
+   - Empty state message
+
+2. Add **Edit functionality**:
+   - Each todo should have an "Edit" button next to "Remove"
+   - When clicking "Edit", that todo turns into an input field
+   - Show "Save" and "Cancel" buttons instead of "Edit" and "Remove"
+   - "Save" updates the todo text
+   - "Cancel" discards changes and goes back to normal view
+
+3. **State management**:
+   - Track which todo is being edited (use an index or ID)
+   - Track the edit value separately from the original todo
+   - Only one todo can be edited at a time
+
+4. **Validation**:
+   - Don't allow saving empty todos (use `.trim()`)
+   - If edit field is empty, disable the Save button
+
+## Example Flow
+
+Normal view:
+```
+• Buy milk          [Edit] [Remove]
+• Study Svelte      [Edit] [Remove]
+```
+
+Editing mode (clicked Edit on "Buy milk"):
+```
+• [Buy milk____]    [Save] [Cancel]
+• Study Svelte      [Edit] [Remove]
+```
+
+After saving:
+```
+• Buy groceries     [Edit] [Remove]
+• Study Svelte      [Edit] [Remove]
+```
+
+## Tips
+
+- Track editing state:
+  ```svelte
+  <script>
+    let todos = ['Buy milk', 'Study Svelte']
+    let editingIndex = null  // null means nothing is being edited
+    let editValue = ''       // temporary value while editing
+
+    function startEdit(index) {
+      editingIndex = index
+      editValue = todos[index]  // Copy current value
+    }
+
+    function saveEdit() {
+      if (editValue.trim() !== '') {
+        todos[editingIndex] = editValue.trim()
+        todos = todos  // Trigger reactivity
+        editingIndex = null
+      }
+    }
+
+    function cancelEdit() {
+      editingIndex = null
+      editValue = ''
+    }
+  </script>
+  ```
+
+- In the template, check if a specific todo is being edited:
+  ```svelte
+  {#each todos as todo, index}
+    {#if editingIndex === index}
+      <!-- Show input field and Save/Cancel buttons -->
+    {:else}
+      <!-- Show normal todo with Edit/Remove buttons -->
+    {/if}
+  {/each}
+  ```
+
+- Remember: reassigning the array triggers reactivity:
+  ```svelte
+  todos[index] = newValue
+  todos = todos  // This triggers Svelte's reactivity
+  ```
+
+## What You're Learning
+
+- Managing more complex state (editing mode)
+- Conditional rendering within loops
+- Updating array items immutably
+- Handling multiple UI modes (view vs edit)
+- State coordination between different variables
+
+Work in: `/src/svelte-scripts/Opdracht9/Opdracht9.svelte`
+
+This one's a step up, sweetie - you're managing different states for each todo item!

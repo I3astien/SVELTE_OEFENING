@@ -1,0 +1,54 @@
+# Opdracht 5: Todo List with Delete
+
+## Goal
+Extend your todo list by adding the ability to delete individual todos. Learn about using index in `{#each}` loops.
+
+## Requirements
+
+1. Start with your Opdracht 4 code (or create a simple todo list)
+2. Add a "Delete" or "×" button next to each todo item
+3. When clicked, remove that specific todo from the list
+4. Display the total count with proper singular/plural text (ternary operator!)
+5. **Challenge**: Use conditional rendering to show a message when the list is empty:
+   - When `todos.length === 0`, show "No todos yet! Add one above."
+   - Use `{#if}` and `{:else}` blocks
+
+## Example Output
+```
+Your Todos (2)
+
+• Buy groceries [×]
+• Learn Svelte [×]
+
+[___________] [Add]
+
+You have 2 todos
+```
+
+When empty:
+```
+Your Todos (0)
+
+No todos yet! Add one above.
+
+[___________] [Add]
+
+You have 0 todos
+```
+
+## Tips
+- Get the index in each loop: `{#each todos as todo, index}`
+- Remove item at index: `todos = todos.filter((_, i) => i !== index)`
+- The `filter` method creates a new array (triggers reactivity!)
+- `{:else}` goes between `{#if}` and `{/if}`:
+  ```svelte
+  {#if condition}
+    <p>Show this when true</p>
+  {:else}
+    <p>Show this when false</p>
+  {/if}
+  ```
+
+Work in: `/src/svelte-scripts/Opdracht5/Opdracht5.svelte`
+
+Read everything carefully, sweetie!

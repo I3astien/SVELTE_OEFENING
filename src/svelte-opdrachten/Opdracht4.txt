@@ -1,0 +1,43 @@
+# Opdracht 4: Simple Todo List
+
+## Goal
+Learn Svelte's `{#each}` loop by creating a simple todo list display.
+
+## Requirements
+
+1. Create an array variable `todos` with at least 3 todo items (strings)
+   - Example: `['Buy groceries', 'Learn Svelte', 'Walk the dog']`
+2. Use `{#each}` to loop through and display all todos as a list
+3. Add an input field and a button to add new todos to the list
+4. Display the total number of todos
+5. **Challenge**: Use a ternary operator to show:
+   - "You have 1 todo" (singular) when there's exactly 1 item
+   - "You have X todos" (plural) for any other number
+
+## Example Output
+```
+Your Todos (3)
+
+• Buy groceries
+• Learn Svelte
+• Walk the dog
+
+[___________] [Add]
+
+You have 3 todos
+```
+
+## Tips
+- Svelte's each loop syntax:
+  ```svelte
+  {#each items as item}
+    <p>{item}</p>
+  {/each}
+  ```
+- To add to an array: `todos = [...todos, newItem]` (this keeps it reactive!)
+- Get array length with `todos.length`
+- Input binding: `<input bind:value={variable}>`
+
+Work in: `/src/svelte-scripts/Opdracht4/Opdracht4.svelte`
+
+Take your time and read everything, honey!

@@ -1,0 +1,113 @@
+# Opdracht 10: Component Props - User Card
+
+## Goal
+Learn to pass data into components using props. This is your first step into building reusable components!
+
+## Requirements
+
+1. Create TWO files:
+   - `Opdracht10.svelte` - The parent component
+   - `UserCard.svelte` - A child component (in the same Opdracht10 folder)
+
+2. **UserCard component** should:
+   - Accept props: `name`, `age`, `email`, `role`
+   - Display them in a nice card layout
+   - Show a default image/icon for the user
+
+3. **Parent component (Opdracht10.svelte)** should:
+   - Import the UserCard component
+   - Create an array of at least 3 users with their info
+   - Use `{#each}` to render a UserCard for each user
+   - Display all cards in a grid or list
+
+4. **Bonus challenge**:
+   - Add an optional `isOnline` prop (boolean)
+   - Show a green dot if the user is online, gray if offline
+
+## Example Output
+
+```
+User Directory
+
+┌─────────────────────┐ ┌─────────────────────┐ ┌─────────────────────┐
+│  👤                 │ │  👤                 │ │  👤                 │
+│  John Doe      🟢   │ │  Jane Smith    ⚫   │ │  Bob Wilson    🟢   │
+│  Age: 28            │ │  Age: 34            │ │  Age: 45            │
+│  john@email.com     │ │  jane@email.com     │ │  bob@email.com      │
+│  Role: Developer    │ │  Role: Designer     │ │  Role: Manager      │
+└─────────────────────┘ └─────────────────────┘ └─────────────────────┘
+```
+
+## Tips
+
+**Creating props in a component:**
+```svelte
+<!-- UserCard.svelte -->
+<script>
+  export let name
+  export let age
+  export let email
+  export let role
+  export let isOnline = false  // Optional prop with default value
+</script>
+
+<div class="card">
+  <h3>{name}</h3>
+  <p>Age: {age}</p>
+  <p>{email}</p>
+  <p>Role: {role}</p>
+  {#if isOnline}
+    <span>🟢 Online</span>
+  {:else}
+    <span>⚫ Offline</span>
+  {/if}
+</div>
+```
+
+**Using the component:**
+```svelte
+<!-- Opdracht10.svelte -->
+<script>
+  import UserCard from './UserCard.svelte'
+
+  let users = [
+    { name: 'John Doe', age: 28, email: 'john@email.com', role: 'Developer', isOnline: true },
+    { name: 'Jane Smith', age: 34, email: 'jane@email.com', role: 'Designer', isOnline: false }
+  ]
+</script>
+
+<div class="users">
+  {#each users as user}
+    <UserCard
+      name={user.name}
+      age={user.age}
+      email={user.email}
+      role={user.role}
+      isOnline={user.isOnline}
+    />
+  {/each}
+</div>
+
+<!-- Shorthand when prop names match object keys: -->
+<UserCard {...user} />
+```
+
+## What You're Learning
+
+- Creating reusable components
+- Passing props to child components
+- Optional props with default values
+- Component composition
+- Spread operator for props
+
+## File Structure
+
+```
+/src/svelte-scripts/Opdracht10/
+  Opdracht10.svelte        ← Parent (imports and uses UserCard)
+  UserCard.svelte          ← Child (receives and displays props)
+```
+
+Work in: `/src/svelte-scripts/Opdracht10/`
+
+This is your first multi-file assignment, honey - you're building something reusable!
