@@ -51,4 +51,3 @@ Current temp: Comfortable
 
 Work in: `/src/svelte-scripts/Opdracht6/Opdracht6.svelte`
 
-This is a new concept but really powerful, sweetie! Take your time.
