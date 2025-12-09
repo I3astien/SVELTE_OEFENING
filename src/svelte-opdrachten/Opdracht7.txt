@@ -64,4 +64,3 @@ Total: €54.00
 
 Work in: `/src/svelte-scripts/Opdracht7/Opdracht7.svelte`
 
-This one focuses on `$:` again, sweetie. Read carefully!
