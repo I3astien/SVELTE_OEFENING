@@ -29,5 +29,3 @@ Count: 5
 - Think about how to handle three conditions (positive, negative, zero) with ternary operators
 
 Work in: `/src/svelte-scripts/Opdracht2/Opdracht2.svelte`
-
-Good luck, sweetie!
