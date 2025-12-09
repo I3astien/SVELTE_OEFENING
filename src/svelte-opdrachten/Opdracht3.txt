@@ -39,4 +39,3 @@ Hello! This is a secret message.
 
 Work in: `/src/svelte-scripts/Opdracht3/Opdracht3.svelte`
 
-Good luck, darling!
