@@ -50,5 +50,3 @@ You have 0 todos
   ```
 
 Work in: `/src/svelte-scripts/Opdracht5/Opdracht5.svelte`
-
-Read everything carefully, sweetie!
